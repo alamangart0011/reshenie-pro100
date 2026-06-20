@@ -1,16 +1,16 @@
 /* ============================================================
-   Решение PRO100 — юридическая компания, Ярославль
-   Палитра: глубокий петроль (сине-зелёный) + тёплый айвори
-   + приглушённая латунь. Спокойная, премиальная, не бьёт по глазам.
+   АСТРЕНТ — юридическая компания, Ярославль
+   Палитра: фирменный бордово-кирпичный + золото + тёплый айвори.
+   Глубокий тон бренда (логотип-звезда), премиальный, не «кричащий».
    ============================================================ */
 
 :root{
-  --navy:#123a4b;        /* основной глубокий петроль */
-  --navy-2:#17506a;      /* светлее, для градиентов */
-  --navy-deep:#0d2a37;   /* самый тёмный */
-  --gold:#c2954f;        /* приглушённая латунь (акцент) */
-  --gold-2:#a87d3b;      /* латунь темнее, hover */
-  --gold-soft:#e9d9bb;   /* светлая латунь для текста на тёмном */
+  --navy:#8a2a1f;        /* фирменный бордово-кирпичный (АСТРЕНТ) */
+  --navy-2:#a5392a;      /* светлее, для градиентов */
+  --navy-deep:#5f1a12;   /* самый тёмный */
+  --gold:#c9a24a;        /* приглушённая латунь (акцент) */
+  --gold-2:#a87d33;      /* латунь темнее, hover */
+  --gold-soft:#f0e2c2;   /* светлая латунь для текста на тёмном */
   --ink:#1e2a30;         /* тёплый тёмно-графитовый текст */
   --muted:#5d6b72;       /* приглушённый текст */
   --line:#e7e1d5;        /* тёплые разделители */
@@ -104,7 +104,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 
 /* ============ Hero ============ */
 .hero{position:relative;color:#fff;overflow:hidden;
-  background:radial-gradient(125% 125% at 82% 0%, #1c5f76 0%, var(--navy) 46%, var(--navy-deep) 100%);
+  background:radial-gradient(125% 125% at 82% 0%, #b0432f 0%, var(--navy) 46%, var(--navy-deep) 100%);
 }
 .hero__overlay{position:absolute;inset:0;opacity:.45;
   background-image:
@@ -178,7 +178,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .about{display:grid;grid-template-columns:1fr 1.1fr;gap:54px;align-items:center;}
 .about__panel{
   position:relative;border-radius:var(--radius);overflow:hidden;color:#fff;
-  background:radial-gradient(120% 120% at 80% 0%,#1c5f76 0%,var(--navy) 55%,var(--navy-deep) 100%);
+  background:radial-gradient(120% 120% at 80% 0%,#b0432f 0%,var(--navy) 55%,var(--navy-deep) 100%);
   box-shadow:var(--shadow);padding:42px 38px;
 }
 .about__panel::before{content:"";position:absolute;inset:0;opacity:.5;
@@ -227,7 +227,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .member__tags li{background:var(--bg-alt);border:1px solid var(--line);border-radius:20px;padding:5px 13px;font-size:12.5px;font-weight:600;color:var(--navy);}
 
 /* ============ CTA баннер ============ */
-.cta-banner{background:linear-gradient(120% 120% at 80% 0%,#1c5f76,var(--navy-deep));color:#fff;}
+.cta-banner{background:linear-gradient(120% 120% at 80% 0%,#b0432f,var(--navy-deep));color:#fff;}
 .cta-banner__inner{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:54px 24px;flex-wrap:wrap;}
 .cta-banner__title{color:#fff;font-size:clamp(24px,3vw,34px);margin-bottom:8px;}
 .cta-banner__sub{color:rgba(255,255,255,.82);font-size:17px;max-width:520px;}
@@ -368,7 +368,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .plan__list li::before{content:"✓";position:absolute;left:0;top:-1px;color:var(--gold-2);font-weight:700;}
 
 /* ============ Квиз ============ */
-.quiz{background:radial-gradient(125% 125% at 15% 0%,#1c5f76 0%,var(--navy) 50%,var(--navy-deep) 100%);color:#fff;padding:74px 0;}
+.quiz{background:radial-gradient(125% 125% at 15% 0%,#b0432f 0%,var(--navy) 50%,var(--navy-deep) 100%);color:#fff;padding:74px 0;}
 .quiz__inner{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;}
 .quiz__title{color:#fff;font-size:clamp(26px,3.4vw,38px);margin-bottom:14px;}
 .quiz__sub{color:rgba(255,255,255,.85);font-size:17px;margin-bottom:20px;}
@@ -393,3 +393,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 
 @media(max-width:900px){.plans{grid-template-columns:1fr;}}
 @media(max-width:860px){.quiz__inner{grid-template-columns:1fr;gap:32px;}}
+
+/* АСТРЕНТ: логотип-звезда */
+.logo__mark svg{width:27px;height:27px;}
+.logo__word{letter-spacing:.5px;}

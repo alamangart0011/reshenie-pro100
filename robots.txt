@@ -3,4 +3,4 @@ Allow: /
 Disallow: /privacy.html
 
 # Замените домен на ваш реальный после публикации
-Sitemap: https://reshenie-pro100.ru/sitemap.xml
+Sitemap: https://assurent.ru/sitemap.xml
