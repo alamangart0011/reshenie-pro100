@@ -421,6 +421,65 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .logo__mark svg{width:27px;height:27px;}
 .logo__word{letter-spacing:.5px;}
 
+
+/* ============================================================
+   ПРЕМИУМ-АПГРЕЙД (дизайн-воркфлоу, 48 агентов):
+   металл-золото на крупном, тёплые тени, читаемый текст,
+   типографика, fluid-ритм, золотые SVG-иконки вместо эмодзи.
+   ============================================================ */
+:root{
+  --muted:#4a565c;
+  --shadow:0 18px 50px -22px rgba(95,26,18,.30);
+  --shadow-sm:0 10px 28px -16px rgba(95,26,18,.26);
+  --gold-grad:linear-gradient(135deg,#e9cd86,#c9a24a 45%,#a87d33);
+  --gold-sheen:linear-gradient(135deg,#f3e3b6,#c9a24a 46%,#8f6a26);
+  --section-y:clamp(56px,8vw,104px);
+  --gutter:clamp(20px,5vw,40px);
+  --gap:clamp(18px,2.2vw,28px);
+  --gap-lg:clamp(32px,4vw,54px);
+}
+.section{padding:var(--section-y) 0;}
+.container{padding-left:var(--gutter);padding-right:var(--gutter);}
+.cards,.team,.reviews,.plans,.steps{gap:var(--gap);}
+.about,.contacts,.hero__inner,.quiz__inner{gap:var(--gap-lg);}
+.hero__title{letter-spacing:-.02em;line-height:1.07;text-wrap:balance;}
+.section__title,.cta-banner__title,.quiz__title{letter-spacing:-.015em;line-height:1.13;text-wrap:balance;}
+.section__sub{max-width:58ch;margin-left:auto;margin-right:auto;}
+.about__content .section__sub{max-width:48ch;margin-left:0;margin-right:0;}
+.acc__body p{max-width:68ch;}
+.stat__num,.stat__plus,.about__facts b,.review__big,.about__quote,.step__num{
+  background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:var(--gold);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:'lnum' 1,'tnum' 1;
+}
+.btn--gold{background:var(--gold-grad);color:#33260f;
+  box-shadow:0 12px 26px -12px rgba(201,162,74,.6),inset 0 1px 0 rgba(255,255,255,.45);}
+.btn--gold:hover{background:var(--gold-sheen);transform:translateY(-2px);
+  box-shadow:0 16px 30px -12px rgba(201,162,74,.72),inset 0 1px 0 rgba(255,255,255,.5);}
+.plan__badge{background:var(--gold-grad);box-shadow:inset 0 1px 0 rgba(255,255,255,.45);}
+.btn--ghost{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.92);}
+.member__ava{box-shadow:inset 0 0 0 1px rgba(240,226,194,.25),inset 0 0 0 5px rgba(201,162,74,.12),0 12px 26px -14px rgba(95,26,18,.55);}
+.member:hover .member__ava{box-shadow:inset 0 0 0 1px rgba(240,226,194,.32),inset 0 0 0 5px rgba(201,162,74,.16),0 16px 32px -12px rgba(95,26,18,.62);}
+.header.scrolled{box-shadow:0 6px 24px -16px rgba(95,26,18,.5);}
+/* SVG-иконки вместо эмодзи */
+.card__icon{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,#fff,var(--bg-alt));border:1px solid var(--line);display:grid;place-items:center;margin-bottom:16px;}
+.card__icon svg{width:28px;height:28px;}
+.card__icon svg,.feature__icon svg,.contacts__ic svg{fill:none;stroke:var(--gold-2);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.feature__icon svg{width:24px;height:24px;}
+.contacts__ic svg{width:20px;height:20px;}
+.topbar svg{width:14px;height:14px;fill:none;stroke:var(--gold-soft);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px;}
+.i-ic{width:1.05em;height:1.05em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px;display:inline-block;}
+@media (prefers-reduced-motion:no-preference){.card:hover .card__icon{transform:translateY(-2px);transition:.25s var(--ease);}}
+
+/* Квиз-калькулятор: обязательные расходы */
+.quiz__calc{background:var(--bg-alt);border:1px solid var(--line);border-radius:12px;padding:15px 18px;margin-bottom:18px;text-align:left;}
+.quiz__calc-row{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--ink);padding:6px 0;}
+.quiz__calc-row span{color:var(--muted);}
+.quiz__calc-row b{font-variant-numeric:lining-nums tabular-nums;white-space:nowrap;}
+.quiz__calc-row--total{border-top:1px solid var(--line);margin-top:4px;padding-top:10px;font-weight:700;}
+.quiz__calc-row--total b{color:var(--gold-2);font-size:16px;}
+.quiz__calc-note{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.5;}
+
 </style>
 
   <!-- Микроразметка для поиска (Local Business) -->
@@ -461,9 +520,9 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
   <!-- ===== Топ-полоса ===== -->
   <div class="topbar">
     <div class="container topbar__inner">
-      <span class="topbar__item">📍 Ярославль, ул. Советская, 43</span>
+      <span class="topbar__item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg> Ярославль, ул. Советская, 43</span>
       <span class="topbar__item topbar__rating">★ 5,0 — рейтинг компании</span>
-      <span class="topbar__item">🕘 Пн–Пт 10:00–19:00, Сб 11:00–16:00</span>
+      <span class="topbar__item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg> Пн–Пт 10:00–19:00, Сб 11:00–16:00</span>
     </div>
   </div>
 
@@ -489,7 +548,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 
       <div class="header__actions">
         <a href="tel:+79066390939" class="header__phone">
-          <span class="header__phone-icon">📞</span>
+          <span class="header__phone-icon"><svg class="i-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5l2.5.6 1 3.2-1.8 1.6a12 12 0 0 0 5 5l1.6-1.8 3.2 1 .6 2.5-1.4 1.6a2 2 0 0 1-1.9.6C12 17.8 6.2 12 5.3 6.9a2 2 0 0 1 .6-1.9z"/></svg></span>
           <span>+7 (906) 639-09-39</span>
         </a>
         <a href="#lead" class="btn btn--gold btn--sm">Консультация</a>
@@ -505,7 +564,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
     <div class="hero__overlay"></div>
     <div class="container hero__inner">
       <div class="hero__content reveal">
-        <span class="hero__badge">⚖️ Юристы и адвокаты в Ярославле · рейтинг 5,0</span>
+        <span class="hero__badge"><svg class="i-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5V20"/><path d="M9 20h6"/><path d="M5 7h14"/><path d="M5 7l-2 4.6"/><path d="M5 7l2 4.6"/><path d="M3 11.6q2 2.8 4 0"/><path d="M19 7l-2 4.6"/><path d="M19 7l2 4.6"/><path d="M17 11.6q2 2.8 4 0"/></svg> Юристы и адвокаты в Ярославле · рейтинг 5,0</span>
         <h1 class="hero__title">
           Юридическая помощь<br>семье и <span class="accent">бизнесу</span>
         </h1>
@@ -516,7 +575,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 
         <div class="hero__cta">
           <a href="#lead" class="btn btn--gold btn--lg">Бесплатная консультация</a>
-          <a href="tel:+79066390939" class="btn btn--ghost btn--lg">📞 Позвонить</a>
+          <a href="tel:+79066390939" class="btn btn--ghost btn--lg"><svg class="i-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5l2.5.6 1 3.2-1.8 1.6a12 12 0 0 0 5 5l1.6-1.8 3.2 1 .6 2.5-1.4 1.6a2 2 0 0 1-1.9.6C12 17.8 6.2 12 5.3 6.9a2 2 0 0 1 .6-1.9z"/></svg> Позвонить</a>
         </div>
 
         <ul class="hero__points">
@@ -581,42 +640,42 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 
       <div class="cards">
         <article class="card reveal">
-          <div class="card__icon">🏦</div>
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5l9-5.5 9 5.5"/><path d="M4.5 9.5v9"/><path d="M9 9.5v9"/><path d="M15 9.5v9"/><path d="M19.5 9.5v9"/><path d="M3 19.5h18"/></svg></div>
           <h3 class="card__title">Банкротство физлиц</h3>
           <p class="card__text">Законно спишем долги, кредиты и микрозаймы — без звонков банков и визитов коллекторов, под защитой закона. Ведём процедуру лично: от консультации до решения суда.</p>
           <a href="#lead" class="card__link">Узнать, спишут ли долги →</a>
         </article>
 
         <article class="card reveal">
-          <div class="card__icon">⚖️</div>
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5V20"/><path d="M9 20h6"/><path d="M5 7h14"/><path d="M5 7l-2 4.6"/><path d="M5 7l2 4.6"/><path d="M3 11.6q2 2.8 4 0"/><path d="M19 7l-2 4.6"/><path d="M19 7l2 4.6"/><path d="M17 11.6q2 2.8 4 0"/></svg></div>
           <h3 class="card__title">Представительство в суде</h3>
           <p class="card__text">Возьмём вашу защиту на себя — от подготовки документов до выступления в заседании. Знаем порядки судов Ярославля и области и добиваемся результата за вас.</p>
           <a href="#lead" class="card__link">Оценить перспективы дела →</a>
         </article>
 
         <article class="card reveal">
-          <div class="card__icon">🏠</div>
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
           <h3 class="card__title">Недвижимость и земля</h3>
           <p class="card__text">Оформим, разделим или защитим права на квартиру, дом или участок — от спорных границ до сделок «под ключ». Знаем местную специфику Ярославля и области.</p>
           <a href="#lead" class="card__link">Проверить документы →</a>
         </article>
 
         <article class="card reveal">
-          <div class="card__icon">💰</div>
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 8h3.1a2.3 2.3 0 0 1 0 4.6H9.6V7.2"/><path d="M8.2 13.4h4.6"/></svg></div>
           <h3 class="card__title">Взыскание долгов</h3>
           <p class="card__text">Вернём ваши деньги: досудебная претензия, суд, исполнительное производство под ключ. Знаем местные суды и приставов — доводим до реального возврата средств.</p>
           <a href="#lead" class="card__link">Вернуть долг →</a>
         </article>
 
         <article class="card reveal">
-          <div class="card__icon">👨‍👩‍👧</div>
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="2.6"/><circle cx="16" cy="8" r="2.6"/><path d="M3.5 19c0-2.9 2-4.6 4.5-4.6 1.3 0 2.4.4 3.2 1.1"/><path d="M13 14.6c.8-.4 1.8-.7 3-.7 2.5 0 4.5 1.7 4.5 4.6"/></svg></div>
           <h3 class="card__title">Семья и наследство</h3>
           <p class="card__text">Развод, раздел имущества, алименты, вступление в наследство без споров — спокойно и по закону. Знаем ярославские суды и нотариусов.</p>
           <a href="#lead" class="card__link">Задать вопрос юристу →</a>
         </article>
 
         <article class="card reveal">
-          <div class="card__icon">📄</div>
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l3.5 3.5v12.5a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1z"/><path d="M14 3.5V7h3.5"/><path d="M9 11h6.4"/><path d="M9 13.6h6.4"/><path d="M9 16.2h3.4"/></svg></div>
           <h3 class="card__title">Сделки и документы</h3>
           <p class="card__text">Сопровождаем покупку, продажу и дарение недвижимости: проверяем документы, составляем договор и доводим до записи в Росреестре. Ваши деньги и право собственности под защитой.</p>
           <a href="#lead" class="card__link">Сопроводить сделку →</a>
@@ -652,28 +711,28 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 
         <ul class="features">
           <li class="feature">
-            <span class="feature__icon">🎯</span>
+            <span class="feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r="1.1"/></svg></span>
             <div>
               <h4>Честная оценка перспектив</h4>
               <p>Не обещаем невозможного. Сразу скажем, какие шансы, сроки и стоимость.</p>
             </div>
           </li>
           <li class="feature">
-            <span class="feature__icon">🛡️</span>
+            <span class="feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
             <div>
               <h4>Адвокаты с опытом</h4>
               <p>Защиту ведут практикующие адвокаты, знающие ярославские суды изнутри.</p>
             </div>
           </li>
           <li class="feature">
-            <span class="feature__icon">⭐</span>
+            <span class="feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6L12 16.8 6.7 19.6l1.1-6L3.4 9.4l6-.8z"/></svg></span>
             <div>
               <h4>Рейтинг 5,0</h4>
               <p>Клиенты благодарят за профессионализм и внимательное отношение к делу.</p>
             </div>
           </li>
           <li class="feature">
-            <span class="feature__icon">🤝</span>
+            <span class="feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.4 12.2l2.4 2.4 4.8-5"/></svg></span>
             <div>
               <h4>Договор и прозрачность</h4>
               <p>Фиксируем стоимость и сроки в договоре. Никаких скрытых платежей.</p>
@@ -822,7 +881,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
         <p class="cta-banner__sub">Позвоните или оставьте заявку — разберём вашу ситуацию бесплатно и подскажем решение.</p>
       </div>
       <div class="cta-banner__actions">
-        <a href="tel:+79066390939" class="btn btn--gold btn--lg">📞 +7 (906) 639-09-39</a>
+        <a href="tel:+79066390939" class="btn btn--gold btn--lg"><svg class="i-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5l2.5.6 1 3.2-1.8 1.6a12 12 0 0 0 5 5l1.6-1.8 3.2 1 .6 2.5-1.4 1.6a2 2 0 0 1-1.9.6C12 17.8 6.2 12 5.3 6.9a2 2 0 0 1 .6-1.9z"/></svg> +7 (906) 639-09-39</a>
         <a href="#contacts" class="btn btn--max btn--lg">Написать в MAX</a>
       </div>
     </div>
@@ -837,7 +896,6 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
         <p class="section__sub">Компании ставят высшую оценку 5,0 на 2ГИС. Несколько историй о реальных ситуациях — банкротство, суды, недвижимость.</p>
       </div>
 
-      <!-- Тексты отзывов сгенерированы под реальные практики компании. При желании замените их на дословные отзывы из вашего 2ГИС/ВК. -->
       <div class="reviews">
         <figure class="review review--cta reveal">
           <div class="review__big">5,0<span>★</span></div>
@@ -945,8 +1003,15 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
           </div>
           <div class="quiz__step quiz__result" data-step="result">
             <div class="quiz__result-ic">✓</div>
-            <h3 class="quiz__q">Похоже, мы сможем вам помочь</h3>
-            <p class="quiz__result-text">Оставьте телефон — юрист бесплатно рассчитает перспективы списания именно по вашей ситуации и расскажет, с чего начать.</p>
+            <h3 class="quiz__q" data-verdict>Похоже, мы сможем вам помочь</h3>
+            <p class="quiz__result-text" data-verdict-sub>Оставьте телефон — юрист бесплатно рассчитает перспективы списания именно по вашей ситуации и расскажет, с чего начать.</p>
+            <div class="quiz__calc">
+              <div class="quiz__calc-row"><span>Госпошлина суда</span><b>300 ₽</b></div>
+              <div class="quiz__calc-row"><span>Депозит фин. управляющего</span><b>25 000 ₽</b></div>
+              <div class="quiz__calc-row"><span>Публикации (ЕФРСБ + «Коммерсантъ»)</span><b>≈ 16 000 ₽</b></div>
+              <div class="quiz__calc-row quiz__calc-row--total"><span>Обязательные расходы по закону</span><b>≈ 41 300 ₽</b></div>
+              <p class="quiz__calc-note">Это фиксированные расходы самой процедуры. Стоимость нашего сопровождения — индивидуально, возможна рассрочка; точную сумму назовём на бесплатной консультации.</p>
+            </div>
             <form class="form form--compact" data-form>
               <input class="form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
               <button class="btn btn--gold btn--block" type="submit">Узнать результат бесплатно</button>
@@ -971,10 +1036,10 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
       <div class="contacts">
         <div class="contacts__info reveal">
           <ul class="contacts__list">
-            <li><span class="contacts__ic">📍</span><div><strong>Адрес</strong><p>г. Ярославль, ул. Советская, 43, 1 этаж<br>(Кировский район, центр города)</p></div></li>
-            <li><span class="contacts__ic">📞</span><div><strong>Телефон</strong><p><a href="tel:+79066390939">+7 (906) 639-09-39</a></p></div></li>
-            <li><span class="contacts__ic">💬</span><div><strong>MAX</strong><p><a href="tel:+79301227765">+7 (930) 122-77-65</a> — напишите нам в мессенджере MAX</p></div></li>
-            <li><span class="contacts__ic">🕘</span><div><strong>Режим работы</strong><p>Пн–Пт 10:00–19:00, Сб 11:00–16:00 · по записи</p></div></li>
+            <li><span class="contacts__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><div><strong>Адрес</strong><p>г. Ярославль, ул. Советская, 43, 1 этаж<br>(Кировский район, центр города)</p></div></li>
+            <li><span class="contacts__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5l2.5.6 1 3.2-1.8 1.6a12 12 0 0 0 5 5l1.6-1.8 3.2 1 .6 2.5-1.4 1.6a2 2 0 0 1-1.9.6C12 17.8 6.2 12 5.3 6.9a2 2 0 0 1 .6-1.9z"/></svg></span><div><strong>Телефон</strong><p><a href="tel:+79066390939">+7 (906) 639-09-39</a></p></div></li>
+            <li><span class="contacts__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H9l-4 3.5v-3.5H4z"/></svg></span><div><strong>MAX</strong><p><a href="tel:+79301227765">+7 (930) 122-77-65</a> — напишите нам в мессенджере MAX</p></div></li>
+            <li><span class="contacts__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg></span><div><strong>Режим работы</strong><p>Пн–Пт 10:00–19:00, Сб 11:00–16:00 · по записи</p></div></li>
           </ul>
 
           <div class="contacts__socials">
@@ -1062,7 +1127,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 
   <!-- Мобильная панель действий -->
   <div class="mobilebar">
-    <a href="tel:+79066390939" class="mobilebar__btn">📞 Позвонить</a>
+    <a href="tel:+79066390939" class="mobilebar__btn"><svg class="i-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5l2.5.6 1 3.2-1.8 1.6a12 12 0 0 0 5 5l1.6-1.8 3.2 1 .6 2.5-1.4 1.6a2 2 0 0 1-1.9.6C12 17.8 6.2 12 5.3 6.9a2 2 0 0 1 .6-1.9z"/></svg> Позвонить</a>
     <a href="#lead" class="mobilebar__btn mobilebar__btn--accent">Консультация</a>
   </div>
 
@@ -1282,14 +1347,31 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
     const bar = quiz.querySelector('[data-quiz-bar]');
     const backBtn = quiz.querySelector('[data-quiz-back]');
     const order = ['1', '2', '3', 'result'];
+    const answers = {};
     let idx = 0;
+    const renderVerdict = () => {
+      const debt = answers['1']; // 0: до 250к, 1: 250–500к, 2: более 500к
+      const v = quiz.querySelector('[data-verdict]');
+      const vs = quiz.querySelector('[data-verdict-sub]');
+      if (!v || !vs) return;
+      if (debt === 1 || debt === 2) {
+        v.textContent = 'Похоже, банкротство вам подходит';
+        vs.textContent = 'По сумме долга процедура реальна. Ниже — обязательные расходы по закону; стоимость нашего сопровождения и рассрочку рассчитаем на бесплатной консультации.';
+      } else if (debt === 0) {
+        v.textContent = 'Нужна индивидуальная оценка';
+        vs.textContent = 'При долге до 250 000 ₽ иногда выгоднее другие пути. Бесплатно разберём вашу ситуацию и подскажем оптимальное решение.';
+      }
+    };
     const render = () => {
       stepsEls.forEach((s) => s.classList.toggle('is-active', s.dataset.step === order[idx]));
       if (bar) bar.style.width = ((idx + 1) / order.length) * 100 + '%';
       if (backBtn) backBtn.hidden = idx === 0;
+      if (order[idx] === 'result') renderVerdict();
     };
     quiz.querySelectorAll('[data-next]').forEach((btn) =>
       btn.addEventListener('click', () => {
+        const step = btn.closest('.quiz__step');
+        if (step) answers[step.dataset.step] = Array.prototype.indexOf.call(btn.parentElement.children, btn);
         if (idx < order.length - 1) { idx++; render(); }
       })
     );

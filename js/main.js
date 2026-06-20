@@ -210,14 +210,31 @@
     const bar = quiz.querySelector('[data-quiz-bar]');
     const backBtn = quiz.querySelector('[data-quiz-back]');
     const order = ['1', '2', '3', 'result'];
+    const answers = {};
     let idx = 0;
+    const renderVerdict = () => {
+      const debt = answers['1']; // 0: до 250к, 1: 250–500к, 2: более 500к
+      const v = quiz.querySelector('[data-verdict]');
+      const vs = quiz.querySelector('[data-verdict-sub]');
+      if (!v || !vs) return;
+      if (debt === 1 || debt === 2) {
+        v.textContent = 'Похоже, банкротство вам подходит';
+        vs.textContent = 'По сумме долга процедура реальна. Ниже — обязательные расходы по закону; стоимость нашего сопровождения и рассрочку рассчитаем на бесплатной консультации.';
+      } else if (debt === 0) {
+        v.textContent = 'Нужна индивидуальная оценка';
+        vs.textContent = 'При долге до 250 000 ₽ иногда выгоднее другие пути. Бесплатно разберём вашу ситуацию и подскажем оптимальное решение.';
+      }
+    };
     const render = () => {
       stepsEls.forEach((s) => s.classList.toggle('is-active', s.dataset.step === order[idx]));
       if (bar) bar.style.width = ((idx + 1) / order.length) * 100 + '%';
       if (backBtn) backBtn.hidden = idx === 0;
+      if (order[idx] === 'result') renderVerdict();
     };
     quiz.querySelectorAll('[data-next]').forEach((btn) =>
       btn.addEventListener('click', () => {
+        const step = btn.closest('.quiz__step');
+        if (step) answers[step.dataset.step] = Array.prototype.indexOf.call(btn.parentElement.children, btn);
         if (idx < order.length - 1) { idx++; render(); }
       })
     );
