@@ -244,5 +244,31 @@
     render();
   }
 
-  /* ---- Год в подвале (на будущее, если понадобится динамический) ---- */
+  /* ---- Модалка обратного звонка ---- */
+  const cbModal = document.getElementById('callbackModal');
+  if (cbModal) {
+    const openM = () => { cbModal.hidden = false; document.body.style.overflow = 'hidden'; };
+    const closeM = () => { cbModal.hidden = true; document.body.style.overflow = ''; };
+    document.querySelectorAll('[data-callback]').forEach((b) =>
+      b.addEventListener('click', (e) => { e.preventDefault(); openM(); }));
+    cbModal.querySelectorAll('[data-close]').forEach((b) => b.addEventListener('click', closeM));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !cbModal.hidden) closeM(); });
+    const mf = cbModal.querySelector('[data-modal-form]');
+    if (mf) mf.addEventListener('submit', () => setTimeout(closeM, 900));
+  }
+
+  /* ---- Прогресс прокрутки ---- */
+  const sb = document.getElementById('scrollbar');
+  if (sb) {
+    const updSb = () => {
+      const d = document.documentElement;
+      const max = d.scrollHeight - d.clientHeight;
+      sb.style.width = (max > 0 ? (d.scrollTop / max) * 100 : 0) + '%';
+    };
+    window.addEventListener('scroll', updSb, { passive: true });
+    window.addEventListener('resize', updSb);
+    updSb();
+  }
+
+  /* ---- Год в подвале ---- */
 })();
