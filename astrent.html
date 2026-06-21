@@ -508,6 +508,17 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .member__ph{position:absolute;inset:0;display:grid;place-items:center;font-family:'PT Serif',Georgia,serif;font-weight:700;font-size:46px;color:var(--gold);letter-spacing:2px;}
 .member__ph--icon svg{width:62px;height:62px;fill:none;stroke:var(--gold-soft);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
 
+/* Прайс-лист (реальные цены) */
+.pricelist{margin-top:38px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 32px;box-shadow:var(--shadow-sm);}
+.pricelist__title{font-size:22px;margin-bottom:16px;text-align:center;}
+.pricelist__rows{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;list-style:none;}
+.pricelist__rows li{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);}
+.pricelist__rows li span{color:var(--ink);font-size:15px;}
+.pricelist__rows li b{color:var(--gold-2);font-weight:700;white-space:nowrap;font-variant-numeric:lining-nums tabular-nums;}
+.pricelist__note{margin-top:18px;color:var(--muted);font-size:14px;text-align:center;}
+.pricelist__note a{color:var(--gold-2);font-weight:700;}
+@media(max-width:760px){.pricelist__rows{grid-template-columns:1fr;}.pricelist{padding:24px 20px;}}
+
 </style>
 
   <!-- Микроразметка для поиска (Local Business) -->
@@ -517,6 +528,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
     "@type": "LegalService",
     "name": "Юридическая компания «АСТРЕНТ»",
     "telephone": "+7-906-639-09-39",
+    "taxID": "762703867528",
     "priceRange": "Первая консультация бесплатно",
     "address": {
       "@type": "PostalAddress",
@@ -826,13 +838,12 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
         </figure>
 
         <figure class="member reveal">
-          <!-- TODO: укажите реальное ФИО адвоката — тогда замените медальон на монограмму (класс member__ava--mono с инициалами) -->
-          <div class="member__photo"><img src="images/advocate.jpg" alt="Адвокат компании" loading="lazy" onerror="this.remove()"><span class="member__ph member__ph--icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5V20"/><path d="M9 20h6"/><path d="M5 7h14"/><path d="M5 7l-2 4.6"/><path d="M5 7l2 4.6"/><path d="M3 11.6q2 2.8 4 0"/><path d="M19 7l-2 4.6"/><path d="M19 7l2 4.6"/><path d="M17 11.6q2 2.8 4 0"/></svg></span></div>
+          <div class="member__photo"><img src="images/advocate.jpg" alt="Комаров Дмитрий Евгеньевич — адвокат" loading="lazy" onerror="this.remove()"><span class="member__ph">ДК</span></div>
           <figcaption>
-            <h3 class="member__name">Адвокат компании</h3>
-            <p class="member__role">Судебная защита</p>
-            <p class="member__desc">Представительство в судах всех инстанций Ярославля и области, защита по сложным делам.</p>
-            <ul class="member__tags"><li>Суды</li><li>Защита</li><li>Апелляция</li></ul>
+            <h3 class="member__name">Комаров Дмитрий Евгеньевич</h3>
+            <p class="member__role">Партнёр компании · адвокат</p>
+            <p class="member__desc">Высшее юридическое образование (ЯрГУ им. П.&nbsp;Г.&nbsp;Демидова). 25 лет в правоохранительных и надзорных органах: следствие, прокуратура — следователь по особо важным делам, заместитель прокурора, прокурор района; с 2012 — Следственный комитет РФ по Ярославской области.</p>
+            <ul class="member__tags"><li>Уголовные дела</li><li>Суды</li><li>Защита</li></ul>
           </figcaption>
         </figure>
 
@@ -896,6 +907,12 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
           </ul>
           <a href="#lead" class="btn btn--navy btn--block">Запросить условия</a>
         </article>
+      </div>
+
+      <div class="pricelist reveal">
+        <h3 class="pricelist__title">Цены на основные услуги</h3>
+        <ul class="pricelist__rows"><li><span>Составление ходатайств</span><b>3 000 ₽</b></li><li><span>Взыскание алиментов</span><b>от 3 000 ₽</b></li><li><span>Восстановление родительских прав</span><b>от 3 000 ₽</b></li><li><span>Составление исковых заявлений</span><b>от 5 000 ₽</b></li><li><span>Представительство в суде</span><b>от 5 000 ₽</b></li><li><span>Определение места проживания ребёнка</span><b>от 5 000 ₽</b></li><li><span>Раздел имущества</span><b>от 10 000 ₽</b></li><li><span>Расторжение брака</span><b>от 10 000 ₽</b></li><li><span>Признание брака недействительным</span><b>от 10 000 ₽</b></li><li><span>Определение порядка общения с ребёнком</span><b>от 10 000 ₽</b></li><li><span>Установление отцовства</span><b>50 000 ₽</b></li></ul>
+        <p class="pricelist__note">Первая консультация — бесплатно. Точную стоимость по вашему делу назовём на консультации или по телефону <a href="tel:+79066390939">+7 (906) 639-09-39</a>.</p>
       </div>
     </div>
   </section>
@@ -1142,7 +1159,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
     </div>
     <div class="footer__bottom">
       <div class="container footer__bottom-inner">
-        <span>© 2026 Юридическая компания «АСТРЕНТ». Все права защищены.</span>
+        <span>© 2026 Юридическая компания «АСТРЕНТ». ИНН 762703867528. Все права защищены.</span>
         <a href="#">Политика конфиденциальности</a>
       </div>
     </div>
