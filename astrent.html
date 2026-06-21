@@ -498,6 +498,10 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .modal__title{font-size:22px;margin-bottom:6px;}
 .modal__sub{color:var(--muted);font-size:14.5px;margin-bottom:16px;}
 
+/* Реальный логотип (если положен images/logo.png) поверх SVG-звезды */
+.logo__mark{position:relative;overflow:hidden;}
+.logo__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+
 </style>
 
   <!-- Микроразметка для поиска (Local Business) -->
@@ -548,7 +552,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#hero" class="logo" aria-label="АСТРЕНТ — на главную">
-        <span class="logo__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.9 6.26 6.84.78-5.06 4.63 1.36 6.74L12 17.77l-6 3.64 1.36-6.74L2.26 9.04l6.84-.78z"/></svg></span>
+        <span class="logo__mark"><img class="logo__img" src="images/logo.png" alt="АСТРЕНТ" onerror="this.remove()"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.9 6.26 6.84.78-5.06 4.63 1.36 6.74L12 17.77l-6 3.64 1.36-6.74L2.26 9.04l6.84-.78z"/></svg></span>
         <span class="logo__text">
           <strong class="logo__word">АСТРЕНТ</strong>
           <small>юридическая компания · Ярославль</small>
@@ -865,7 +869,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
         <article class="plan plan--featured reveal">
           <span class="plan__badge">Чаще всего выбирают</span>
           <h3 class="plan__title">Ведение дела «под ключ»</h3>
-          <p class="plan__price">цена — по итогам консультации</p>
+          <p class="plan__price">Цена — по телефону</p>
           <p class="plan__desc">Берём дело полностью: документы, суд, исполнение решения. Вы занимаетесь своими делами — мы вашим вопросом.</p>
           <ul class="plan__list">
             <li>Фиксированная цена в договоре</li>
@@ -877,7 +881,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 
         <article class="plan reveal">
           <h3 class="plan__title">Сопровождение бизнеса</h3>
-          <p class="plan__price">по договору</p>
+          <p class="plan__price">Цена — по телефону</p>
           <p class="plan__desc">Абонентское юридическое обслуживание компаний и ИП: договоры, споры, проверки, текущие вопросы.</p>
           <ul class="plan__list">
             <li>Юрист на связи постоянно</li>
@@ -922,27 +926,27 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
         </figure>
         <figure class="review reveal">
           <div class="review__stars">★★★★★</div>
-          <blockquote>Долгов накопилось под 700 тысяч, и я больше всего боялся за квартиру — думал, заберут. Анатолий Владимирович сразу спокойно объяснил, что единственное жильё не трогают, так и вышло: квартира при мне, долги списали. Вели всё сами, я только документы подвозил.</blockquote>
+          <blockquote>Висело несколько кредитов и две микрозаймовые конторы, тысяч на 700. Больше всего трясся за квартиру — был уверен, что отберут. На первой же встрече мне разложили по полкам: единственное жильё не трогают. Так и вышло — всё списали, квартира при мне. Я только бумажки подвозил, остальное сами. Спасибо огромное.</blockquote>
           <figcaption><strong>Андрей К.</strong><span>банкротство физлица</span></figcaption>
         </figure>
         <figure class="review reveal">
           <div class="review__stars">★★★★★</div>
-          <blockquote>Контрагент кормил завтраками почти год, я уже махнул рукой. Анатолий Владимирович честно разложил шансы и сроки, без обещаний золотых гор. Долг через суд взыскали почти полностью, плюс проценты. Держали в курсе на каждом этапе — рекомендую.</blockquote>
+          <blockquote>Заказчик кинул на оплату, кормил завтраками почти год, я уже и рукой махнул. Тут без сказок про «100% выиграем» — честно сказали шансы и сроки. Подали в суд, взыскали почти всё, ещё и проценты накапали. По деньгам окупилось с лихвой, держали в курсе на каждом шаге.</blockquote>
           <figcaption><strong>Дмитрий</strong><span>взыскание долга</span></figcaption>
         </figure>
         <figure class="review reveal">
           <div class="review__stars">★★★★★</div>
-          <blockquote>Сосед самовольно сдвинул забор и доказывал, что земля его. Сами устали спорить. Подняли документы, заказали межевание, по нему и установили реальную границу — забор вернули на место. Объясняли всё нормальным языком, без воды.</blockquote>
+          <blockquote>Сосед по даче передвинул забор и встал в позу — мол, земля его и точка. Сами спорили-спорили, без толку. Ребята подняли документы, организовали межевание, по нему границу и узаконили — забор вернулся на место). Объясняли всё по-человечески, без юридической тарабарщины.</blockquote>
           <figcaption><strong>Сергей М.</strong><span>земельный спор</span></figcaption>
         </figure>
         <figure class="review reveal">
           <div class="review__stars">★★★★★</div>
-          <blockquote>Разводились с мужем, делили квартиру и машину, я боялась скандала на месяцы. Анатолий Владимирович всё разложил по полочкам и предложил вариант, который устроил обе стороны. Обошлись без криков, поделили по-нормальному. Спасибо, что помогли пройти это с холодной головой.</blockquote>
+          <blockquote>Развод, делили квартиру и машину. Готовилась к войне на полгода и куче нервов. А мне предложили такой вариант раздела, что и бывший согласился без скандала. Прошло на удивление спокойно. Очень благодарна, что помогли пройти это с холодной головой.</blockquote>
           <figcaption><strong>Марина С.</strong><span>развод, раздел имущества</span></figcaption>
         </figure>
         <figure class="review reveal">
           <div class="review__stars">★★★★★</div>
-          <blockquote>После ДТП страховая занизила выплату чуть ли не вдвое, сам спорить устал. Анатолий Владимирович сразу объяснил, на что я реально могу рассчитывать, без лишних обещаний. Страховую дожали, доплату получил — разница ощутимая.</blockquote>
+          <blockquote>Попал в дтп не по своей вине, страховая насчитала смешную сумму — занизили почти вдвое. Сам ходил ругался, ноль реакции. Здесь сразу сказали, на что реально можно рассчитывать. Дожали страховую, доплату получил — разница приличная. Рекомендую.</blockquote>
           <figcaption><strong>Денис</strong><span>спор со страховой (ОСАГО)</span></figcaption>
         </figure>
       </div>
@@ -1066,6 +1070,8 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
             <!-- Заглушка: группы ВКонтакте пока нет. Создадите — впишите ссылку и уберите soc--stub -->
             <a href="#contacts" class="soc soc--vk soc--stub" title="Группа ВКонтакте — скоро" aria-disabled="true">ВКонтакте · скоро</a>
             <a href="https://2gis.ru/yaroslavl/firm/70000001052282912" target="_blank" rel="noopener" class="soc soc--2gis">2ГИС</a>
+            <!-- TODO: когда появится профиль на Яндекс.Картах — вставить ссылку и убрать soc--stub -->
+            <a href="#contacts" class="soc soc--stub" title="Отзывы на Яндекс.Картах — скоро" aria-disabled="true">Яндекс.Карты · скоро</a>
           </div>
 
           <div class="contacts__map">
@@ -1102,7 +1108,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
     <div class="container footer__inner">
       <div class="footer__col">
         <a href="#hero" class="logo logo--light">
-          <span class="logo__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.9 6.26 6.84.78-5.06 4.63 1.36 6.74L12 17.77l-6 3.64 1.36-6.74L2.26 9.04l6.84-.78z"/></svg></span>
+          <span class="logo__mark"><img class="logo__img" src="images/logo.png" alt="АСТРЕНТ" onerror="this.remove()"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.9 6.26 6.84.78-5.06 4.63 1.36 6.74L12 17.77l-6 3.64 1.36-6.74L2.26 9.04l6.84-.78z"/></svg></span>
           <span class="logo__text"><strong class="logo__word">АСТРЕНТ</strong><small>юридическая компания</small></span>
         </a>
         <p class="footer__about">Юридическая помощь физлицам и бизнесу в Ярославле. Банкротство, суды, недвижимость. Работаем на результат.</p>

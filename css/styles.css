@@ -474,3 +474,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .modal__x:hover{color:var(--navy);}
 .modal__title{font-size:22px;margin-bottom:6px;}
 .modal__sub{color:var(--muted);font-size:14.5px;margin-bottom:16px;}
+
+/* Реальный логотип (если положен images/logo.png) поверх SVG-звезды */
+.logo__mark{position:relative;overflow:hidden;}
+.logo__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
