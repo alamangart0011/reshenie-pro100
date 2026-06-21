@@ -495,3 +495,6 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .pricelist__note{margin-top:18px;color:var(--muted);font-size:14px;text-align:center;}
 .pricelist__note a{color:var(--gold-2);font-weight:700;}
 @media(max-width:760px){.pricelist__rows{grid-template-columns:1fr;}.pricelist{padding:24px 20px;}}
+
+/* Команда из двух партнёров — центрируем */
+@media(min-width:641px){.team{grid-template-columns:repeat(2,minmax(0,1fr));max-width:780px;margin-left:auto;margin-right:auto;} /* team--two */}
