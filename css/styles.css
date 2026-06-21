@@ -498,3 +498,9 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 
 /* Команда из двух партнёров — центрируем */
 @media(min-width:641px){.team{grid-template-columns:repeat(2,minmax(0,1fr));max-width:780px;margin-left:auto;margin-right:auto;} /* team--two */}
+
+.member__verify{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--gold-2);border:1px solid var(--line);border-radius:20px;padding:6px 13px;line-height:1.2;}
+.member__verify:hover{background:var(--bg-alt);border-color:var(--gold);}
+
+/* фикс: пункты меню не переносятся на 2 строки */
+.nav__link{white-space:nowrap;}
