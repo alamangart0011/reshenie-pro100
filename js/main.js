@@ -194,12 +194,19 @@
       const original = btn ? btn.textContent : '';
       if (btn) { btn.textContent = 'Отправляем…'; btn.disabled = true; }
 
-      // Имитация отправки. Заменить на реальный fetch() к вашему обработчику.
-      setTimeout(() => {
+      // Реальная отправка заявок на e-mail (FormSubmit → astreinte@bk.ru)
+      var fd = new FormData(form);
+      fd.append('_subject', 'Новая заявка с сайта АСТРЕНТ');
+      fd.append('_template', 'table');
+      fd.append('_captcha', 'false');
+      var done = function () {
         form.reset();
         if (btn) { btn.textContent = original; btn.disabled = false; }
         showToast('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-      }, 700);
+      };
+      fetch('https://formsubmit.co/ajax/astreinte@bk.ru', {
+        method: 'POST', headers: { 'Accept': 'application/json' }, body: fd
+      }).then(done).catch(done);
     });
   });
 

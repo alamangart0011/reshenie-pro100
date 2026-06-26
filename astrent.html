@@ -745,7 +745,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
           <span class="about__quote" aria-hidden="true">“</span>
           <p class="about__promise">Берёмся за дело только тогда, когда видим реальную перспективу — и говорим вам правду уже на первой встрече.</p>
           <ul class="about__facts">
-            <li><b>5,0</b><span>рейтинг компании на 2ГИС</span></li>
+            <li><b>5,0</b><span>рейтинг компании</span></li>
             <li><b>12+</b><span>лет юридической практики</span></li>
             <li><b>1000+</b><span>решённых вопросов клиентов</span></li>
           </ul>
@@ -841,7 +841,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
           <figcaption>
             <h3 class="member__name">Моисеев Анатолий Владимирович</h3>
             <p class="member__role">Руководитель компании · практикующий юрист-консультант</p>
-            <p class="member__desc">Консультирует по вопросам гражданского и административного права. Разрабатывает стратегию и план работы по делу, ведёт сложные дела и отвечает за итоговый результат.</p>
+            <p class="member__desc">Консультирует по вопросам гражданского и административного права. Разрабатывает стратегию и план работы по делу, ведёт сложные дела и отвечает за итоговый результат. Высшее юридическое образование (ВИПЭ МЮ&nbsp;РФ, 2003&nbsp;г.). Стаж работы в правоохранительных органах — 13 лет, общий юридический стаж — более 20 лет.</p>
             <ul class="member__tags"><li>Консультации</li><li>Стратегия</li><li>Контроль дел</li><li>Документы</li><li>Суды</li><li>Арбитраж</li></ul>
           </figcaption>
         </figure>
@@ -863,7 +863,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
           <figcaption>
             <h3 class="member__name">Волков Антон Вячеславович</h3>
             <p class="member__role">Юрист компании</p>
-            <p class="member__desc">Составление документов и представительство в суде. Подготовка документов, ведение дел.</p>
+            <p class="member__desc">Составление документов и представительство в суде. Подготовка документов, ведение дел. Высшее юридическое образование (МФЮА, г.&nbsp;Москва, 2025&nbsp;г.).</p>
             <ul class="member__tags"><li>Документы</li><li>Дела</li><li>Суды</li></ul>
           </figcaption>
         </figure>
@@ -948,15 +948,10 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
       <div class="section__head reveal">
         <span class="section__kicker">Отзывы</span>
         <h2 class="section__title">Что говорят наши клиенты</h2>
-        <p class="section__sub">Компании ставят высшую оценку 5,0 на 2ГИС. Несколько историй о реальных ситуациях — банкротство, суды, недвижимость.</p>
+        <p class="section__sub">Несколько историй о реальных ситуациях — банкротство, суды, недвижимость.</p>
       </div>
 
       <div class="reviews">
-        <figure class="review review--cta reveal">
-          <div class="review__big">5,0<span>★</span></div>
-          <p>Оценка компании на 2ГИС</p>
-          <a href="https://2gis.ru/yaroslavl/firm/70000001052282912" target="_blank" rel="noopener" class="btn btn--gold btn--block">Смотреть на 2ГИС</a>
-        </figure>
         <figure class="review reveal">
           <div class="review__stars">★★★★★</div>
           <blockquote>Висело несколько кредитов и две микрозаймовые конторы, тысяч на 700. Больше всего трясся за квартиру — был уверен, что отберут. На первой же встрече мне разложили по полкам: единственное жильё не трогают. Так и вышло — всё списали, квартира при мне. Я только бумажки подвозил, остальное сами. Спасибо огромное.</blockquote>
@@ -1102,7 +1097,6 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
             <a href="https://max.ru/" target="_blank" rel="noopener" class="soc soc--max">MAX</a>
             <!-- Заглушка: группы ВКонтакте пока нет. Создадите — впишите ссылку и уберите soc--stub -->
             <a href="#contacts" class="soc soc--vk soc--stub" title="Группа ВКонтакте — скоро" aria-disabled="true">ВКонтакте · скоро</a>
-            <a href="https://2gis.ru/yaroslavl/firm/70000001052282912" target="_blank" rel="noopener" class="soc soc--2gis">2ГИС</a>
             <!-- TODO: когда появится профиль на Яндекс.Картах — вставить ссылку и убрать soc--stub -->
             <a href="#contacts" class="soc soc--stub" title="Отзывы на Яндекс.Картах — скоро" aria-disabled="true">Яндекс.Карты · скоро</a>
           </div>
@@ -1404,12 +1398,19 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
       const original = btn ? btn.textContent : '';
       if (btn) { btn.textContent = 'Отправляем…'; btn.disabled = true; }
 
-      // Имитация отправки. Заменить на реальный fetch() к вашему обработчику.
-      setTimeout(() => {
+      // Реальная отправка заявок на e-mail (FormSubmit → astreinte@bk.ru)
+      var fd = new FormData(form);
+      fd.append('_subject', 'Новая заявка с сайта АСТРЕНТ');
+      fd.append('_template', 'table');
+      fd.append('_captcha', 'false');
+      var done = function () {
         form.reset();
         if (btn) { btn.textContent = original; btn.disabled = false; }
         showToast('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-      }, 700);
+      };
+      fetch('https://formsubmit.co/ajax/astreinte@bk.ru', {
+        method: 'POST', headers: { 'Accept': 'application/json' }, body: fd
+      }).then(done).catch(done);
     });
   });
 
