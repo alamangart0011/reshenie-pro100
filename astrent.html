@@ -34,16 +34,16 @@
   --navy-2:#a5392a;      /* светлее, для градиентов */
   --navy-deep:#5f1a12;   /* самый тёмный */
   --gold:#c9a24a;        /* приглушённая латунь (акцент) */
-  --gold-2:#a87d33;      /* латунь темнее, hover */
+  --gold-2:#8a6a26;      /* латунь темнее, hover */
   --gold-soft:#f0e2c2;   /* светлая латунь для текста на тёмном */
   --ink:#1e2a30;         /* тёплый тёмно-графитовый текст */
   --muted:#5d6b72;       /* приглушённый текст */
   --line:#e7e1d5;        /* тёплые разделители */
   --bg:#ffffff;
   --bg-alt:#f5f1e8;      /* тёплый айвори — мягкий для глаз */
-  --max:#2683ff;         /* мессенджер MAX (МАХ) */
-  --max-2:#1769e0;
-  --vk:#0077ff;          /* ВКонтакте */
+  --max:#8a2a1f;         /* мессенджер MAX (МАХ) */
+  --max-2:#5f1a12;
+  --vk:#8a2a1f;          /* ВКонтакте */
   --radius:16px;
   --radius-sm:11px;
   --shadow:0 18px 50px -22px rgba(18,58,75,.30);
@@ -176,7 +176,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .section{padding:84px 0;}
 .section--alt{background:var(--bg-alt);}
 .section__head{text-align:center;max-width:680px;margin:0 auto 50px;}
-.section__kicker{display:inline-block;color:var(--gold-2);font-weight:700;font-size:13.5px;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:12px;}
+.section__kicker{display:inline-block;color:var(--navy);font-weight:700;font-size:13.5px;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:12px;}
 .section__title{font-size:clamp(28px,4vw,40px);margin-bottom:15px;}
 .section__sub{color:var(--muted);font-size:17.5px;}
 
@@ -323,7 +323,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .fab{position:fixed;right:24px;bottom:88px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#fff;z-index:95;box-shadow:0 12px 30px -8px rgba(0,0,0,.4);transition:.25s var(--ease);}
 .fab--max{background:var(--max);animation:pulse 2.4s infinite;}
 .fab--max:hover{transform:scale(1.08);background:var(--max-2);}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(38,131,255,.5);}70%{box-shadow:0 0 0 16px rgba(38,131,255,0);}100%{box-shadow:0 0 0 0 rgba(38,131,255,0);}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(201,162,74,.5);}70%{box-shadow:0 0 0 16px rgba(201,162,74,0);}100%{box-shadow:0 0 0 0 rgba(201,162,74,0);}}
 
 .to-top{position:fixed;right:24px;bottom:24px;width:50px;height:50px;border-radius:50%;background:var(--navy);color:var(--gold);border:1px solid rgba(194,149,79,.4);font-size:20px;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s var(--ease);z-index:90;box-shadow:var(--shadow-sm);}
 .to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
@@ -528,6 +528,15 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 /* фикс: пункты меню не переносятся на 2 строки */
 .nav__link{white-space:nowrap;}
 
+/* === ТЗ-фиксы: WCAG, баги, активное меню, валидация === */
+.stat__num--word{font-size:clamp(22px,2.6vw,32px);}
+.nav__link.active{color:var(--navy);}
+.nav__link.active::after{width:100%;}
+.form__input:user-invalid{border-color:#c0392b;background:#fff6f4;}
+.form__input:user-invalid:focus{box-shadow:0 0 0 4px rgba(192,57,43,.15);}
+.btn--max{background:transparent;color:#fff;border:1.5px solid rgba(240,226,194,.55);}
+.btn--max:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px);}
+
 </style>
 
   <!-- Микроразметка для поиска (Local Business) -->
@@ -671,7 +680,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
         <span class="stat__label">решённых вопросов клиентов</span>
       </div>
       <div class="stat reveal">
-        <span class="stat__num" data-count="0">0</span><span class="stat__plus">₽</span>
+        <span class="stat__num stat__num--word">Бесплатно</span>
         <span class="stat__label">первая консультация</span>
       </div>
     </div>
@@ -745,9 +754,9 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
           <span class="about__quote" aria-hidden="true">“</span>
           <p class="about__promise">Берёмся за дело только тогда, когда видим реальную перспективу — и говорим вам правду уже на первой встрече.</p>
           <ul class="about__facts">
-            <li><b>5,0</b><span>рейтинг компании</span></li>
-            <li><b>12+</b><span>лет юридической практики</span></li>
-            <li><b>1000+</b><span>решённых вопросов клиентов</span></li>
+            <li><b>76/822</b><span>адвокат в реестре АП Ярославской обл.</span></li>
+            <li><b>25 лет</b><span>опыта в правоохранительных органах</span></li>
+            <li><b>20+ лет</b><span>общий юридический стаж руководителя</span></li>
           </ul>
           <span class="about__sign">— команда «АСТРЕНТ» · Ярославль</span>
         </div>
@@ -1284,7 +1293,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
   setTimeout(() => reveals.forEach(showEl), 2200);
 
   /* ---- Счётчики статистики ---- */
-  const counters = document.querySelectorAll('.stat__num');
+  const counters = document.querySelectorAll('.stat__num[data-count]');
   const animateCount = (el) => {
     const target = parseInt(el.dataset.count, 10) || 0;
     const dur = 1600;
@@ -1482,6 +1491,25 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
   }
 
   /* ---- Год в подвале ---- */
+  /* ---- Активный пункт меню (scroll-spy) ---- */
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav__link'));
+    var map = links.map(function (l) {
+      var id = l.getAttribute('href');
+      return (id && id.charAt(0) === '#') ? { l: l, sec: document.querySelector(id) } : null;
+    }).filter(function (m) { return m && m.sec; });
+    if (map.length) {
+      var spy = function () {
+        var y = window.scrollY + 130, cur = null;
+        map.forEach(function (m) { if (m.sec.offsetTop <= y) cur = m; });
+        links.forEach(function (l) { l.classList.remove('active'); });
+        if (cur) cur.l.classList.add('active');
+      };
+      window.addEventListener('scroll', spy, { passive: true });
+      spy();
+    }
+  })();
+
 })();
 
 </script>

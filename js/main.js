@@ -80,7 +80,7 @@
   setTimeout(() => reveals.forEach(showEl), 2200);
 
   /* ---- Счётчики статистики ---- */
-  const counters = document.querySelectorAll('.stat__num');
+  const counters = document.querySelectorAll('.stat__num[data-count]');
   const animateCount = (el) => {
     const target = parseInt(el.dataset.count, 10) || 0;
     const dur = 1600;
@@ -278,4 +278,23 @@
   }
 
   /* ---- Год в подвале ---- */
+  /* ---- Активный пункт меню (scroll-spy) ---- */
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav__link'));
+    var map = links.map(function (l) {
+      var id = l.getAttribute('href');
+      return (id && id.charAt(0) === '#') ? { l: l, sec: document.querySelector(id) } : null;
+    }).filter(function (m) { return m && m.sec; });
+    if (map.length) {
+      var spy = function () {
+        var y = window.scrollY + 130, cur = null;
+        map.forEach(function (m) { if (m.sec.offsetTop <= y) cur = m; });
+        links.forEach(function (l) { l.classList.remove('active'); });
+        if (cur) cur.l.classList.add('active');
+      };
+      window.addEventListener('scroll', spy, { passive: true });
+      spy();
+    }
+  })();
+
 })();
