@@ -511,3 +511,17 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .form__input:user-invalid:focus{box-shadow:0 0 0 4px rgba(192,57,43,.15);}
 .btn--max{background:transparent;color:#fff;border:1.5px solid rgba(240,226,194,.55);}
 .btn--max:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px);}
+
+/* === Доп. улучшения (ТЗ): timeline шагов, слайдер отзывов, боковая вкладка === */
+.steps{position:relative;}
+@media(min-width:861px){
+  .steps::before{content:"";position:absolute;top:48px;left:12%;right:12%;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 7px,transparent 7px 15px);opacity:.45;z-index:0;}
+  .step{position:relative;z-index:1;}
+}
+@media(max-width:760px){
+  .reviews{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:10px;-webkit-overflow-scrolling:touch;}
+  .reviews .review{flex:0 0 86%;scroll-snap-align:center;}
+}
+.sidetab{position:fixed;top:50%;right:0;z-index:85;writing-mode:vertical-rl;transform:translateY(-50%);background:var(--gold-grad);color:#33260f;font-family:'Manrope',sans-serif;font-weight:700;font-size:14px;letter-spacing:.3px;padding:16px 9px;border:none;border-radius:10px 0 0 10px;cursor:pointer;box-shadow:-4px 8px 20px -8px rgba(95,26,18,.55);transition:.2s var(--ease);}
+.sidetab:hover{padding-right:13px;}
+@media(max-width:860px){.sidetab{display:none;}}

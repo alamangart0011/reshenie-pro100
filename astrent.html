@@ -15,6 +15,7 @@
   <meta name="theme-color" content="#8a2a1f" />
   <meta property="og:image" content="https://alamangart0011.github.io/reshenie-pro100/images/logo.png" />
   <meta property="og:url" content="https://alamangart0011.github.io/reshenie-pro100/" />
+  <link rel="canonical" href="https://alamangart0011.github.io/reshenie-pro100/" />
 
   <link rel="icon" type="image/png" href="images/logo.png" />
 
@@ -537,6 +538,20 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .btn--max{background:transparent;color:#fff;border:1.5px solid rgba(240,226,194,.55);}
 .btn--max:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px);}
 
+/* === Доп. улучшения (ТЗ): timeline шагов, слайдер отзывов, боковая вкладка === */
+.steps{position:relative;}
+@media(min-width:861px){
+  .steps::before{content:"";position:absolute;top:48px;left:12%;right:12%;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 7px,transparent 7px 15px);opacity:.45;z-index:0;}
+  .step{position:relative;z-index:1;}
+}
+@media(max-width:760px){
+  .reviews{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:10px;-webkit-overflow-scrolling:touch;}
+  .reviews .review{flex:0 0 86%;scroll-snap-align:center;}
+}
+.sidetab{position:fixed;top:50%;right:0;z-index:85;writing-mode:vertical-rl;transform:translateY(-50%);background:var(--gold-grad);color:#33260f;font-family:'Manrope',sans-serif;font-weight:700;font-size:14px;letter-spacing:.3px;padding:16px 9px;border:none;border-radius:10px 0 0 10px;cursor:pointer;box-shadow:-4px 8px 20px -8px rgba(95,26,18,.55);transition:.2s var(--ease);}
+.sidetab:hover{padding-right:13px;}
+@media(max-width:860px){.sidetab{display:none;}}
+
 </style>
 
   <!-- Микроразметка для поиска (Local Business) -->
@@ -646,9 +661,9 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
         <h3 class="hero__card-title">Получить консультацию</h3>
         <p class="hero__card-sub">Оставьте заявку — перезвоним в течение 15 минут и оценим вашу ситуацию бесплатно.</p>
         <form class="form form--compact" data-form>
-          <input class="form__input" type="text" name="name" placeholder="Ваше имя" required />
-          <input class="form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
-          <select class="form__input" name="topic">
+          <input class="form__input" type="text" name="name" aria-label="Ваше имя" placeholder="Ваше имя" required />
+          <input class="form__input" type="tel" name="phone" aria-label="Телефон" placeholder="+7 (___) ___-__-__" required />
+          <select class="form__input" name="topic" aria-label="Тип вопроса">
             <option value="">Выберите вопрос</option>
             <option>Банкротство физлиц</option>
             <option>Спор в суде</option>
@@ -1072,7 +1087,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
               <p class="quiz__calc-note">Это фиксированные расходы самой процедуры. Стоимость нашего сопровождения — индивидуально, возможна рассрочка; точную сумму назовём на бесплатной консультации.</p>
             </div>
             <form class="form form--compact" data-form>
-              <input class="form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
+              <input class="form__input" type="tel" name="phone" aria-label="Телефон" placeholder="+7 (___) ___-__-__" required />
               <button class="btn btn--gold btn--block" type="submit">Узнать результат бесплатно</button>
               <p class="form__note">Нажимая кнопку, вы соглашаетесь с <a href="#" target="_blank" style="color:var(--gold-2);text-decoration:underline;">обработкой данных</a>.</p>
             </form>
@@ -1123,10 +1138,10 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
           <h3 class="contacts__form-title">Оставить заявку</h3>
           <form class="form" data-form>
             <div class="form__row">
-              <input class="form__input" type="text" name="name" placeholder="Ваше имя" required />
-              <input class="form__input" type="tel" name="phone" placeholder="Телефон" required />
+              <input class="form__input" type="text" name="name" aria-label="Ваше имя" placeholder="Ваше имя" required />
+              <input class="form__input" type="tel" name="phone" aria-label="Телефон" placeholder="Телефон" required />
             </div>
-            <textarea class="form__input form__textarea" name="message" placeholder="Кратко опишите вашу ситуацию" rows="4"></textarea>
+            <textarea class="form__input form__textarea" name="message" aria-label="Ваш вопрос" placeholder="Кратко опишите вашу ситуацию" rows="4"></textarea>
             <label class="form__check">
               <input type="checkbox" required />
               <span>Согласен на <a href="#" target="_blank" style="color:var(--gold-2);text-decoration:underline;">обработку персональных данных</a></span>
@@ -1202,13 +1217,15 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
       <h3 class="modal__title">Заказать обратный звонок</h3>
       <p class="modal__sub">Оставьте телефон — перезвоним в течение 15 минут в рабочее время.</p>
       <form class="form form--compact" data-form data-modal-form>
-        <input class="form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
+        <input class="form__input" type="tel" name="phone" aria-label="Телефон" placeholder="+7 (___) ___-__-__" required />
         <button class="btn btn--gold btn--block" type="submit">Жду звонка</button>
         <p class="form__note">Нажимая кнопку, вы соглашаетесь с <a href="#" target="_blank" style="color:var(--gold-2);text-decoration:underline;">обработкой данных</a>.</p>
       </form>
     </div>
   </div>
   <div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
+
+  <button class="sidetab" type="button" data-callback>Задать вопрос</button>
 
   <script>
 /* ============================================================
