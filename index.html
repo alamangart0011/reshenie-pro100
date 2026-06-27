@@ -13,11 +13,13 @@
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:site_name" content="АСТРЕНТ" />
   <meta name="theme-color" content="#8a2a1f" />
-  <meta property="og:image" content="https://alamangart0011.github.io/reshenie-pro100/images/logo.png" />
-  <meta property="og:url" content="https://alamangart0011.github.io/reshenie-pro100/" />
-  <link rel="canonical" href="https://alamangart0011.github.io/reshenie-pro100/" />
+  <meta property="og:image" content="https://assurent.ru/images/logo.png" />
+  <meta property="og:url" content="https://assurent.ru/" />
+  <link rel="canonical" href="https://assurent.ru/" />
 
-  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,8 +43,7 @@
       "postalCode": "150000",
       "addressCountry": "RU"
     },
-    "openingHours": ["Mo-Fr 10:00-19:00","Sa 11:00-16:00"],
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1" }
+    "openingHours": ["Mo-Fr 10:00-19:00","Sa 11:00-16:00"]
   }
   </script>
 
@@ -597,10 +598,9 @@
           </ul>
 
           <div class="contacts__socials">
-            <!-- TODO: когда будет личная ссылка из MAX (Настройки → QR → Поделиться) — вставьте её сюда -->
-            <a href="https://max.ru/" target="_blank" rel="noopener" class="soc soc--max">MAX</a>
+            <a href="#lead" target="_blank" rel="noopener" class="soc soc--max">MAX</a>
             <!-- Заглушка: группы ВКонтакте пока нет. Создадите — впишите ссылку и уберите soc--stub -->
-            <a href="#contacts" class="soc soc--vk soc--stub" title="Группа ВКонтакте — скоро" aria-disabled="true">ВКонтакте · скоро</a>
+            <span class="soc soc--vk soc--stub" title="Группа ВКонтакте — скоро">ВКонтакте · скоро</span>
             <a href="https://yandex.ru/maps/org/137057725063/" target="_blank" rel="noopener" class="soc soc--2gis">Яндекс.Карты</a>
           </div>
 
@@ -673,8 +673,7 @@
   </footer>
 
   <!-- Плавающие кнопки -->
-  <!-- TODO: вставьте реальную ссылку на профиль компании в MAX -->
-  <a href="https://max.ru/" target="_blank" rel="noopener" class="fab fab--max" aria-label="Написать в MAX">
+  <a href="#lead" target="_blank" rel="noopener" class="fab fab--max" aria-label="Написать в MAX">
     <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.6 1.4 4.9 3.6 6.4-.2 1-.8 2.4-1.6 3.4-.2.3.1.7.4.6 1.9-.4 3.4-1.2 4.4-1.9 1 .2 2.1.4 3.2.4 5.5 0 10-3.8 10-8.5S17.5 3 12 3z"/></svg>
   </a>
   <button class="to-top" id="toTop" aria-label="Наверх">↑</button>

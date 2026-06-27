@@ -173,11 +173,8 @@
     });
   });
 
-  /* ---- Обработка форм (демо) ----
-     ВАЖНО: сейчас форма ничего не отправляет на сервер — только показывает
-     уведомление. Чтобы заявки реально приходили, подключите backend:
-     Formspree / Web3Forms / собственный обработчик / интеграцию с Bitrix24
-     (CRM-форма или вебхук crm.lead.add). См. README.md. */
+  /* ---- Обработка форм: реальная отправка заявок на e-mail через FormSubmit
+     (astreinte@bk.ru). Нужна одноразовая активация формы по письму FormSubmit. ---- */
   const toast = document.getElementById('toast');
   const showToast = (msg) => {
     if (!toast) return;
@@ -204,9 +201,18 @@
         if (btn) { btn.textContent = original; btn.disabled = false; }
         showToast('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
       };
+      var fail = function () {
+        if (btn) { btn.textContent = original; btn.disabled = false; }
+        showToast('Не удалось отправить. Позвоните: +7 (906) 639-09-39');
+      };
       fetch('https://formsubmit.co/ajax/astreinte@bk.ru', {
         method: 'POST', headers: { 'Accept': 'application/json' }, body: fd
-      }).then(done).catch(done);
+      })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r); })
+        .then(function (d) {
+          if (d && (d.success === 'true' || d.success === true)) { done(); } else { fail(); }
+        })
+        .catch(fail);
     });
   });
 
