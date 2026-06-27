@@ -199,6 +199,7 @@
       var done = function () {
         form.reset();
         if (btn) { btn.textContent = original; btn.disabled = false; }
+        if (window.ym) { ym(110194531, 'reachGoal', 'lead'); }
         showToast('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
       };
       var fail = function () {
