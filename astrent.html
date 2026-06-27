@@ -552,6 +552,12 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .sidetab:hover{padding-right:13px;}
 @media(max-width:860px){.sidetab{display:none;}}
 
+/* Виджет живых отзывов Яндекс.Карт */
+.yandex-reviews{max-width:760px;margin:0 auto 36px;text-align:center;}
+.yandex-reviews iframe{width:100%;height:560px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;display:block;}
+.yandex-reviews__link{display:inline-block;margin-top:12px;color:var(--gold-2);font-weight:700;font-size:14.5px;}
+.yandex-reviews__link:hover{color:var(--navy);}
+
 </style>
 
   <!-- Микроразметка для поиска (Local Business) -->
@@ -976,7 +982,12 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
       <div class="section__head reveal">
         <span class="section__kicker">Отзывы</span>
         <h2 class="section__title">Что говорят наши клиенты</h2>
-        <p class="section__sub">Несколько историй о реальных ситуациях — банкротство, суды, недвижимость.</p>
+        <p class="section__sub">Реальные отзывы клиентов с Яндекс.Карт и истории дел.</p>
+      </div>
+
+      <div class="yandex-reviews reveal">
+        <iframe src="https://yandex.ru/maps-reviews-widget/137057725063?comments" title="Отзывы об АСТРЕНТ на Яндекс Картах" loading="lazy"></iframe>
+        <a href="https://yandex.ru/maps/org/137057725063/" target="_blank" rel="noopener" class="yandex-reviews__link">Открыть все отзывы на Яндекс Картах →</a>
       </div>
 
       <div class="reviews">
@@ -1125,8 +1136,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
             <a href="https://max.ru/" target="_blank" rel="noopener" class="soc soc--max">MAX</a>
             <!-- Заглушка: группы ВКонтакте пока нет. Создадите — впишите ссылку и уберите soc--stub -->
             <a href="#contacts" class="soc soc--vk soc--stub" title="Группа ВКонтакте — скоро" aria-disabled="true">ВКонтакте · скоро</a>
-            <!-- TODO: когда появится профиль на Яндекс.Картах — вставить ссылку и убрать soc--stub -->
-            <a href="#contacts" class="soc soc--stub" title="Отзывы на Яндекс.Картах — скоро" aria-disabled="true">Яндекс.Карты · скоро</a>
+            <a href="https://yandex.ru/maps/org/137057725063/" target="_blank" rel="noopener" class="soc soc--2gis">Яндекс.Карты</a>
           </div>
 
           <div class="contacts__map">
