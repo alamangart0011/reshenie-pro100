@@ -56,11 +56,11 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;scroll-padding-top:96px;}
+html{scroll-behavior:smooth;scroll-padding-top:96px;overflow-x:hidden;}
 body{
   font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px;
-  -webkit-font-smoothing:antialiased;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
@@ -343,7 +343,12 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 /* ============ Анимация появления ============ */
 .reveal{opacity:0;transform:translateY(26px);transition:.7s var(--ease);}
 .reveal.in{opacity:1;transform:none;}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}.fab--max{animation:none;}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+  .reveal{opacity:1;transform:none;transition:none;}
+  .fab--max{animation:none;}
+}
 
 /* ============ Адаптив ============ */
 @media (max-width:1024px){
@@ -652,6 +657,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
     </div>
   </header>
 
+  <main>
   <!-- ===== Hero ===== -->
   <section class="hero" id="hero">
     <div class="hero__overlay"></div>
@@ -1161,6 +1167,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
       </div>
     </div>
   </section>
+  </main>
 
   <!-- ===== Подвал ===== -->
   <footer class="footer">
@@ -1240,6 +1247,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
    ============================================================ */
 (function () {
   'use strict';
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---- Мобильное меню ---- */
   const burger = document.getElementById('burger');
@@ -1272,7 +1280,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   if (toTop) toTop.addEventListener('click', () =>
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
   );
 
   /* ---- Появление блоков при прокрутке ----
@@ -1283,7 +1291,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
   let revealIndex = 0;
   const showEl = (el) => {
     if (el.classList.contains('in')) return;
-    el.style.transitionDelay = Math.min(revealIndex++ * 50, 240) + 'ms';
+    el.style.transitionDelay = reduceMotion ? '0ms' : Math.min(revealIndex++ * 50, 240) + 'ms';
     el.classList.add('in');
   };
   const showIfInView = () => {
@@ -1320,6 +1328,10 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
   const counters = document.querySelectorAll('.stat__num[data-count]');
   const animateCount = (el) => {
     const target = parseInt(el.dataset.count, 10) || 0;
+    if (reduceMotion) {
+      el.textContent = target.toLocaleString('ru-RU');
+      return;
+    }
     const dur = 1600;
     const start = performance.now();
     const step = (now) => {

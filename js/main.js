@@ -3,6 +3,7 @@
    ============================================================ */
 (function () {
   'use strict';
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---- Мобильное меню ---- */
   const burger = document.getElementById('burger');
@@ -35,7 +36,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   if (toTop) toTop.addEventListener('click', () =>
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
   );
 
   /* ---- Появление блоков при прокрутке ----
@@ -46,7 +47,7 @@
   let revealIndex = 0;
   const showEl = (el) => {
     if (el.classList.contains('in')) return;
-    el.style.transitionDelay = Math.min(revealIndex++ * 50, 240) + 'ms';
+    el.style.transitionDelay = reduceMotion ? '0ms' : Math.min(revealIndex++ * 50, 240) + 'ms';
     el.classList.add('in');
   };
   const showIfInView = () => {
@@ -83,6 +84,10 @@
   const counters = document.querySelectorAll('.stat__num[data-count]');
   const animateCount = (el) => {
     const target = parseInt(el.dataset.count, 10) || 0;
+    if (reduceMotion) {
+      el.textContent = target.toLocaleString('ru-RU');
+      return;
+    }
     const dur = 1600;
     const start = performance.now();
     const step = (now) => {
