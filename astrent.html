@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>АСТРЕНТ — Юридическая компания в Ярославле | Банкротство, суды, недвижимость</title>
-  <meta name="description" content="Юридическая компания «АСТРЕНТ», Ярославль, Мукомольный пер., 4а. Банкротство физлиц, суды, недвижимость и земля. Рейтинг 4,2 на Яндекс.Картах. Бесплатная консультация — звоните +7 (906) 639-09-39." />
-  <meta name="keywords" content="юрист Ярославль, адвокат Ярославль, банкротство физических лиц Ярославль, юридическая компания АСТРЕНТ, Мукомольный переулок 4а, Которосльная набережная, юрист по недвижимости, земельные споры" />
+  <meta name="description" content="Юридическая компания «АСТРЕНТ», Ярославль, Мукомольный пер., 4а. Банкротство физлиц, суды, недвижимость и земля. Бесплатная консультация — звоните +7 (906) 639-09-39." />
+  <meta name="keywords" content="юрист Ярославль, банкротство физических лиц Ярославль, юридическая компания АСТРЕНТ, Мукомольный переулок 4а, Которосльная набережная, юрист по недвижимости, земельные споры" />
 
   <meta property="og:title" content="АСТРЕНТ — Юридическая компания в Ярославле" />
-  <meta property="og:description" content="Банкротство, суды, недвижимость. Рейтинг 4,2 на Яндекс.Картах. Бесплатная консультация: +7 (906) 639-09-39." />
+  <meta property="og:description" content="Банкротство, суды, недвижимость. Бесплатная консультация: +7 (906) 639-09-39." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:site_name" content="АСТРЕНТ" />
@@ -93,7 +93,6 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 /* ============ Топ-полоса ============ */
 .topbar{background:var(--navy-deep);color:rgba(255,255,255,.8);font-size:13.5px;}
 .topbar__inner{display:flex;justify-content:center;gap:28px;padding:9px 24px;flex-wrap:wrap;}
-.topbar__rating{color:var(--gold-soft);font-weight:600;}
 
 /* ============ Шапка ============ */
 .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.93);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);transition:.3s;}
@@ -168,7 +167,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 
 /* ============ Статистика ============ */
 .stats{background:var(--navy);}
-.stats__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:42px 24px;}
+.stats__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:42px 24px;}
 .stat{text-align:center;color:#fff;position:relative;}
 .stat:not(:last-child)::after{content:"";position:absolute;right:-12px;top:18%;height:64%;width:1px;background:rgba(255,255,255,.14);}
 .stat__num{font-family:'PT Serif',serif;font-size:clamp(32px,4vw,44px);font-weight:700;color:var(--gold);}
@@ -235,7 +234,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .step__text{color:var(--muted);font-size:14.5px;}
 
 /* ============ Команда ============ */
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.team{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
 .member{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 26px 28px;text-align:center;transition:.3s var(--ease);}
 .member:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent;}
 .member__ava{
@@ -352,7 +351,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
   .hero__card{max-width:460px;}
   .cards{grid-template-columns:repeat(2,1fr);}
   .steps{grid-template-columns:repeat(2,1fr);}
-  .team{grid-template-columns:repeat(3,1fr);gap:18px;}
+  .team{grid-template-columns:repeat(2,1fr);gap:18px;}
   .about{grid-template-columns:1fr;}
   .footer__inner{grid-template-columns:1fr 1fr;}
 }
@@ -485,7 +484,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
 .quiz__calc-row--total b{color:var(--gold-2);font-size:16px;}
 .quiz__calc-note{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.5;}
 
-/* Команда с фото (Анатолий прислал фото руководителя и адвоката) */
+/* Команда с фото */
 .member{padding:0 0 24px;overflow:hidden;}
 .member__photo{width:100%;aspect-ratio:1/1;background:linear-gradient(140deg,var(--navy),var(--navy-2));background-size:cover;background-position:center 20%;}
 .member__photo--icon{display:grid;place-items:center;}
@@ -592,7 +591,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
       { "@type": "Question", "name": "Реально ли списать долги через банкротство?", "acceptedAnswer": { "@type": "Answer", "text": "Да, при соблюдении условий закона. На бесплатной консультации проверим вашу ситуацию и скажем, подходит ли вам процедура." } },
       { "@type": "Question", "name": "Где находится офис?", "acceptedAnswer": { "@type": "Answer", "text": "В центре Ярославля — Мукомольный пер., д. 4а, пом. 3 (цокольный этаж, вход со стороны Которосльной набережной). Запись по телефону +7 (906) 639-09-39." } },
       { "@type": "Question", "name": "Гарантируете ли вы результат?", "acceptedAnswer": { "@type": "Answer", "text": "Закон запрещает гарантировать конкретное решение суда. Но мы гарантируем профессиональный подход, прозрачность и не берёмся за бесперспективное дело ради денег." } },
-      { "@type": "Question", "name": "Работаете с юрлицами и ИП?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Сопровождаем бизнес: договоры, споры, банкротство юрлиц и ИП, защита по уголовным и административным делам. Возможно абонентское обслуживание." } },
+      { "@type": "Question", "name": "Работаете с юрлицами и ИП?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Сопровождаем бизнес: договоры, судебные и административные споры, банкротство юрлиц и ИП. Возможно абонентское обслуживание." } },
       { "@type": "Question", "name": "Есть ли онлайн-консультация?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Проконсультируем по телефону или в мессенджере, документы можно прислать в электронном виде." } },
       { "@type": "Question", "name": "Возможна ли рассрочка?", "acceptedAnswer": { "@type": "Answer", "text": "По ряду дел оплату можно разбить на части. Условия обсуждаются индивидуально на бесплатной консультации." } }
     ]
@@ -616,7 +615,6 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
   <div class="topbar">
     <div class="container topbar__inner">
       <span class="topbar__item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg> Ярославль, Мукомольный пер., 4а</span>
-      <span class="topbar__item topbar__rating">★ 4,2 на Яндекс.Картах</span>
       <span class="topbar__item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg> Пн–Пт 10:00–19:00, Сб 11:00–16:00</span>
     </div>
   </div>
@@ -663,7 +661,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
           Юридическая помощь<br>семье и бизнесу
         </h1>
         <p class="hero__lead">
-          Помогаем семьям и бизнесу: банкротство, суды, недвижимость, наследство, арбитраж, защита от уголовного и административного преследования. Берёмся за дело, доводим до результата
+          Помогаем семьям и бизнесу: банкротство, суды, недвижимость, наследство, арбитраж и административные споры. Берёмся за дело, доводим до результата
           и говорим честно о перспективах ещё на первой встрече — бесплатно.
         </p>
 
@@ -675,7 +673,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
         <ul class="hero__points">
           <li>✔ Первая консультация — бесплатно</li>
           <li>✔ Честная оценка перспектив дела</li>
-          <li>✔ Опытные адвокаты и юристы</li>
+          <li>✔ Юристы с практическим опытом</li>
         </ul>
       </div>
 
@@ -704,10 +702,6 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
   <!-- ===== Статистика / доверие ===== -->
   <section class="stats">
     <div class="container stats__grid">
-      <div class="stat reveal">
-        <span class="stat__num" data-count="4">0</span><span class="stat__plus">,2 ★</span>
-        <span class="stat__label">рейтинг на Яндекс.Картах</span>
-      </div>
       <div class="stat reveal">
         <span class="stat__num" data-count="12">0</span><span class="stat__plus">+</span>
         <span class="stat__label">лет юридической практики</span>
@@ -738,13 +732,6 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
           <h3 class="card__title">Представительство в суде</h3>
           <p class="card__text">Возьмём вашу защиту на себя — от подготовки документов до выступления в заседании. Знаем порядки судов Ярославля и области и добиваемся результата за вас.</p>
           <a href="#lead" class="card__link">Оценить перспективы дела →</a>
-        </article>
-
-        <article class="card reveal">
-          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V6z"/><path d="M9.2 12l2 2 3.6-4"/></svg></div>
-          <h3 class="card__title">Защита по уголовным и административным делам</h3>
-          <p class="card__text">Защищаем при уголовном и административном преследовании — от доследственной проверки до суда. Выстраиваем линию защиты и отстаиваем ваши права на каждом этапе.</p>
-          <a href="#lead" class="card__link">Получить защиту →</a>
         </article>
 
         <article class="card reveal">
@@ -798,9 +785,9 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
           <span class="about__quote" aria-hidden="true">“</span>
           <p class="about__promise">Берёмся за дело только тогда, когда видим реальную перспективу — и говорим вам правду уже на первой встрече.</p>
           <ul class="about__facts">
-            <li><b>76/822</b><span>адвокат в реестре АП Ярославской обл.</span></li>
-            <li><b>25 лет</b><span>опыта в правоохранительных органах</span></li>
+            <li><b>13 лет</b><span>стаж руководителя в правоохранительных органах</span></li>
             <li><b>20+ лет</b><span>общий юридический стаж руководителя</span></li>
+            <li><b>6</b><span>направлений юридической помощи</span></li>
           </ul>
           <span class="about__sign">— команда «АСТРЕНТ» · Ярославль</span>
         </div>
@@ -808,7 +795,7 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
       <div class="about__content reveal">
         <span class="section__kicker">О компании</span>
         <h2 class="section__title">Почему выбирают «АСТРЕНТ»</h2>
-        <p class="section__sub">Мы — практикующие юристы и адвокаты в самом центре Ярославля, на Мукомольном переулке, 4а. Беремся за дело, только когда видим реальную перспективу, и говорим клиенту правду с первой встречи.</p>
+        <p class="section__sub">Мы — практикующие юристы в самом центре Ярославля, на Мукомольном переулке, 4а. Беремся за дело, только когда видим реальную перспективу, и говорим клиенту правду с первой встречи.</p>
 
         <ul class="features">
           <li class="feature">
@@ -821,8 +808,8 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
           <li class="feature">
             <span class="feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
             <div>
-              <h4>Адвокаты с опытом</h4>
-              <p>Защиту ведут практикующие адвокаты, знающие ярославские суды изнутри.</p>
+              <h4>Практический опыт</h4>
+              <p>Юристы знают специфику ярославских судов и выстраивают понятную стратегию по делу.</p>
             </div>
           </li>
           <li class="feature">
@@ -896,17 +883,6 @@ h1,h2,h3,h4{font-family:'PT Serif',Georgia,serif;line-height:1.22;color:var(--na
             <p class="member__role">Руководитель компании · практикующий юрист-консультант</p>
             <p class="member__desc">Консультирует по вопросам гражданского и административного права. Разрабатывает стратегию и план работы по делу, ведёт сложные дела и отвечает за итоговый результат. Высшее юридическое образование (ВИПЭ МЮ&nbsp;РФ, 2003&nbsp;г.). Стаж работы в правоохранительных органах — 13 лет, общий юридический стаж — более 20 лет.</p>
             <ul class="member__tags"><li>Консультации</li><li>Стратегия</li><li>Контроль дел</li><li>Документы</li><li>Суды</li><li>Арбитраж</li></ul>
-          </figcaption>
-        </figure>
-
-        <figure class="member reveal">
-          <div class="member__photo"><img src="images/advocate.jpg?v=2" alt="Комаров Дмитрий Евгеньевич — адвокат" loading="lazy" onerror="this.remove()"><span class="member__ph">ДК</span></div>
-          <figcaption>
-            <h3 class="member__name">Комаров Дмитрий Евгеньевич</h3>
-            <p class="member__role">Партнёр компании · адвокат</p>
-            <p class="member__desc">Защита обвиняемых в преступлениях и административных правонарушениях, по сложным делам на всех стадиях уголовного и административного производства. Высшее юридическое образование (ЯрГУ им. П.&nbsp;Г.&nbsp;Демидова), 25 лет в правоохранительных и надзорных органах; с 2012 — Следственный комитет РФ по Ярославской области.</p>
-            <ul class="member__tags"><li>Защита</li><li>Следствие</li><li>Суды</li><li>Обжалование приговоров</li></ul>
-            <a class="member__verify" href="https://apyo.fparf.ru/about/lawyers/komarov-dmitriy-evgenevich/" target="_blank" rel="noopener">Адвокат в реестре АП ЯО · № 76/822 ✓ проверить</a>
           </figcaption>
         </figure>
 
